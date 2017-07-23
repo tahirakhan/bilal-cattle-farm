@@ -1,0 +1,66 @@
+<div ng-controller="MenuCtrl" class="col-sm-3" ng-hide="isAuthenticated()"></div>
+
+<div ng-controller="MenuCtrl" class="col-sm-3" ng-show="isAuthenticated()">
+            <!-- Left column -->
+
+
+            <ul class="nav nav-stacked">
+                
+              
+                
+                <li class="nav-header" > <a ui-sref="main"><i class="glyphicon glyphicon-home"></i> Dashboard</a>
+                </li>
+                
+                
+                <li class="nav-header"> <a href="#" data-toggle="collapse" data-target="#masterData">Master Data <i class="glyphicon glyphicon-chevron-down"></i></a>
+                    <ul class="nav nav-stacked collapse in" id="masterData">
+                        <li class="active"> <a ui-sref="company"><i  ></i> Company</a></li>
+                        <li class="active"> <a ui-sref="farms"><i  ></i> Farms</a></li>
+                        <li class="active"> <a ui-sref="tags"><i  ></i> Tags</a></li>
+                        <li class="active"> <a ui-sref="expense-type"><i  ></i> Expense Type</a></li>
+                        <li class="active"> <a ui-sref="products"><i  ></i> Products</a></li>
+                        <li class="active"> <a ui-sref="bill-cycle"><i  ></i> Bill Cycle</a></li>
+                
+                    </ul>
+                </li>
+                <li class="nav-header"> <a href="#" data-toggle="collapse" data-target="#cattleFarm">Cattle Farm <i class="glyphicon glyphicon-chevron-down"></i></a>
+                    <ul class="nav nav-stacked collapse in" id="cattleFarm">
+                        <li class="active"> <a ui-sref="expense"><i  ></i> Expense</a></li>
+                        <li class="active"> <a ui-sref="animals"><i  ></i> Animals</a></li>
+                        <li class="active"> <a ui-sref="stock"><i  ></i> Stock</a></li>
+                        <li class="active"> <a ui-sref="weight"><i  ></i> Weight</a></li>
+                        <li class="active"> <a ui-sref="feed-used"><i  ></i> Feed Used</a></li>
+                        <li class="active"> <a ui-sref="prices"><i  ></i> Prices</a></li>
+                    </ul>
+                </li>
+                <li class="nav-header"> <a href="#" data-toggle="collapse" data-target="#dairyFarm">Dairy Farm <i class="glyphicon glyphicon-chevron-down"></i></a>
+                    <ul class="nav nav-stacked collapse in" id="dairyFarm">
+                        <li class="active"> <a ui-sref="dairy-record"><i  ></i> Dairy Record</a></li>
+                        <li class="active"> <a ui-sref="customers"><i  ></i> Customers</a></li>
+                        <li class="active"> <a ui-sref="milk-delivery"><i  ></i> Milk Delivery</a></li>
+                        <li class="active"> <a ui-sref="dairy-payment"><i  ></i> Dairy Payment</a></li>
+                    </ul>
+                </li>
+                
+                <li class="nav-header"> <a href="#" data-toggle="collapse" data-target="#menu2"> Reports <i class="glyphicon glyphicon-chevron-right"></i></a>
+
+                    <ul class="nav nav-stacked collapse" id="menu2">
+                        <li><a href="#">Information &amp; Stats</a>
+                        </li>
+                        <li><a href="#">Views</a>
+                        </li>
+                        <li><a href="#">Requests</a>
+                        </li>
+                        <li><a href="#">Timetable</a>
+                        </li>
+                        <li><a href="#">Alerts</a>
+                        </li>
+                    </ul>
+                </li>
+                
+            </ul>
+
+            
+
+            
+        </div>

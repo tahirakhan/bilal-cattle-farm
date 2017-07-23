@@ -11,10 +11,11 @@
   <!-- bower:css -->
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
   <link rel="stylesheet" href="bower_components/animate.css/animate.css" />
+  <link rel="stylesheet" href="bower_components/glyphicons/styles/glyphicons.css" />
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/bootstrap.sandstone.css" />
+<!--    <link rel="stylesheet" href="styles/bootstrap.sandstone.css" />-->
   <link rel="stylesheet" href="styles/main.css">
   <!-- endbuild -->
 </head>
@@ -26,13 +27,14 @@
 <div class="container" ng-cloak>
   <!-- Add your site or application content here -->
     <div ng-include="'views/header.html'"></div>
+    <div ng-include="'views/alert.html'"></div>
 <div class="row">
     <div class="ui-view-container">
         <div ui-view></div>
     </div>
 </div>
     
-    <div ng-include="'views/alert.html'"></div>
+    
 
   <div class="footer">
     
@@ -78,6 +80,24 @@
   <script src="scripts/services/authinterceptor.js"></script>
   <script src="scripts/controllers/login.js"></script>
   <script src="scripts/services/auth.js"></script>
+  <script src="scripts/controllers/category.js"></script>
+  <script src="scripts/controllers/menu.js"></script>
+  <script src="scripts/controllers/company.js"></script>
+  <script src="scripts/controllers/farms.js"></script>
+  <script src="scripts/controllers/tags.js"></script>
+  <script src="scripts/controllers/expensetype.js"></script>
+  <script src="scripts/controllers/products.js"></script>
+  <script src="scripts/controllers/animals.js"></script>
+  <script src="scripts/controllers/billcycle.js"></script>
+  <script src="scripts/controllers/customers.js"></script>
+  <script src="scripts/controllers/milkdelivery.js"></script>
+  <script src="scripts/controllers/dairypayment.js"></script>
+  <script src="scripts/controllers/dairyrecord.js"></script>
+  <script src="scripts/controllers/weight.js"></script>
+  <script src="scripts/controllers/feedused.js"></script>
+  <script src="scripts/controllers/prices.js"></script>
+  <script src="scripts/controllers/stock.js"></script>
+  <script src="scripts/controllers/expense.js"></script>
   <!-- endbuild -->
 </body>
 
