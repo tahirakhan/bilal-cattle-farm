@@ -108,6 +108,11 @@ $urlRouterProvider.otherwise('/');
     controller : 'StockCtrl',  
     templateUrl: '/views/stock.html'
   })
+  .state('users', {
+    url: '/users',
+    controller : 'UsersCtrl',  
+    templateUrl: '/views/users.html'
+  })
   
   .state('feed-used', {
     url: '/feedUsed',
