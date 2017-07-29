@@ -10,8 +10,8 @@ node api.js
 
 ## Front end
 ```
-cd frontend
+cd public
 npm install
-bower install
-grunt serve
+bower build:angular
+npm start
 ```
