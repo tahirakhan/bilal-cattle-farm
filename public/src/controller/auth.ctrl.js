@@ -3,8 +3,8 @@ app.controller('AuthController', ['$scope', '$rest', '$state', 'authKey', 'toast
 	// I just prepopulate the user object.. 
 	// It will save the time to login again and again
 	this.user = {
-		email: 'demo@demo.com',
-		password: '123456789',
+		email: 'tahir@vroozi.com',
+		password: 'a',
 	}
 	// app.dashboard
 	// console.log('This is auth controller');
@@ -16,7 +16,7 @@ app.controller('AuthController', ['$scope', '$rest', '$state', 'authKey', 'toast
 
 	// Login
     this.signin = function(){
-    	$rest.call("auth/login", { data: this.user, method: 'POST' }).then(function(data){
+    	$rest.call("login", { data: this.user, method: 'POST' }).then(function(data){
         	// In case of success logged keep the data into authKey and redirect to dashboard
         	authKey.set({ user: data, loggedin: true });
         	toaster.success('Success', 'User Successfully Loggedin');

@@ -4,14 +4,14 @@ app.service ("$rest", function ($http, $q, $location, $rootScope, authKey, $stat
     
     
     /* Tahir Bhai here you can set the production service base URL */
-    var baseURL = "http://live.tahir.bhai.app.com/api/";
+    var baseURL = "http://localhost:9000/";
 
     if (host.indexOf("localhost") != -1) {
         /* Here you can set the localhost services URL */
-        baseURL = "http://localhost/api/";
+        baseURL = "http://localhost:9000/";
     } else if (host.indexOf("staging") != -1) {
         /* Here you can set staging services URL */
-        baseURL = "http://staging.tahir.bhai.app.com/api/";
+        baseURL = "http://localhost:9000/";
     }
 
     function call (route, options){
