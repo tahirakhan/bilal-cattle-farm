@@ -7,8 +7,7 @@
  * # UsersCtrl
  * Controller of the app
  */
-angular.module('app')
-  .controller('UsersCtrl', function ($scope) {
+app.controller('UsersCtrl', ['$scope', function($scope) {
 
     $scope.edit = function(val){
       console.log('id= '+val);
@@ -42,7 +41,7 @@ angular.module('app')
                 aTargets: [5],
                 mRender: function (data, type, full) {
                     var tbAction = '';
-                    tbAction += '<button type="button" ng-click="edit('+full._id+')"   ><i class="fa fa-pencil"></i></button>';
+                    tbAction += '<a onClick="angular.element(document.getElementById(\'UsersCtrl\')).scope().edit(1)" ><i class="fa fa-pencil"></i></button>';
                    return tbAction;
                 }  
             },
@@ -51,10 +50,10 @@ angular.module('app')
                 aTargets: [6],
                 mRender: function (data, type, full) {
                     var tbAction = '';
-                    tbAction += '<button type="button" ng-click="delete('+full._id+')" ><i class="fa fa-times"></i></button>';
+                    tbAction += '<a onClick="angular.element(document.getElementById(\'UsersCtrl\')).scope().delete(1)" ><i class="fa fa-times"></i></button>';
                    return tbAction;
                 }  
             }
         ]
         }
-  });
+  }]);

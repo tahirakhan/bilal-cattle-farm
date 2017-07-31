@@ -1,13 +1,13 @@
 <div class="bg-light lter b-b wrapper-md">
   <h1 class="m-n font-thin h3">Datatable</h1>
 </div>
-<div class="wrapper-md">
+<div class="wrapper-md" ng-controller="UsersCtrl" id="UsersCtrl">
   <div class="panel panel-default">
     <div class="panel-heading">
       DataTables
     </div>
     <div class="table-responsive">
-      <table ui-jq="dataTable" ui-options="tbOptions" ng-controller="UsersCtrl" class="table table-striped b-t b-b" ui-refresh="dataTable">
+      <table ui-jq="dataTable" ui-options="tbOptions" class="table table-striped b-t b-b" ui-refresh="dataTable">
         <thead>
           <tr>
             <th  style="width:5%">Select All</th>
