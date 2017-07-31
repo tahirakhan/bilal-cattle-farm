@@ -1,4 +1,4 @@
-app.controller('AuthController', ['$scope', '$rest','API_URL', '$state', 'authKey', 'toaster', function($scope, $rest, API_URL,$state, authKey, toaster) {
+app.controller('AuthController', ['$scope', '$rest', '$state', 'authKey', 'toaster', function($scope, $rest, $state, authKey, toaster) {
   
 	// I just prepopulate the user object.. 
 	// It will save the time to login again and again

@@ -58,28 +58,28 @@ angular.module('app')
 
               .state('app.user', {
                   url: '/user',
-                  templateUrl: 'view/user/index.html',
+                  templateUrl: './view/user/index.html',
                   resolve: load(['controller/user.ctrl.js'])
               })
               .state('app.userfrom', {
                   url: '/userfrom',
-                  templateUrl: 'view/user/form.html',
+                  templateUrl: './view/user/form.html',
                   resolve: load(['controller/user.ctrl.js'])
               })
               .state('app.usersearch', {
                   url: '/usersearch',
-                  templateUrl: 'view/user/search.html',
+                  templateUrl: './view/user/search.html',
                   resolve: load(['controller/user.ctrl.js'])
               })
 
               .state('app.employee', {
                   url: '/employee',
-                  templateUrl: 'view/employee/index.html',
+                  templateUrl: './view/employee/index.html',
                   resolve: load(['controller/employee.ctrl.js'])
               })
               .state('app.employeefrom', {
                   url: '/add',
-                  templateUrl: 'view/employee/form.html',
+                  templateUrl: './view/employee/form.html',
                   resolve: load(['controller/employee.ctrl.js'])
               })
               .state('app.employeesearch', {
@@ -90,125 +90,125 @@ angular.module('app')
 
               .state('app.product', {
                   url: '/product',
-                  templateUrl: 'view/product/index.html',
+                  templateUrl: './view/product/index.html',
                   resolve: load(['controller/product.ctrl.js'])
               })
               .state('app.productfrom', {
                   url: '/add',
-                  templateUrl: 'view/product/form.html',
+                  templateUrl: './view/product/form.html',
                   resolve: load(['controller/product.ctrl.js'])
               })
               .state('app.productsearch', {
                   url: '/search',
-                  templateUrl: 'view/product/search.html',
+                  templateUrl: './view/product/search.html',
                   resolve: load(['controller/product.ctrl.js'])
               })
 
 
-                .state('logout', {
+                .state('app.logout', {
                     url: '/logout',
                     resolve : load(['controller/logout.js'])
                 })
                 
-                .state('company', {
+                .state('app.company', {
                     url: '/company',
                     resolve : load(['controller/company.js']),  
-                    templateUrl: '/views/cattlefarm/company.html'
+                    templateUrl: './view/cattlefarm/company.html'
                 })
                 
-                .state('farms', {
+                .state('app.farms', {
                     url: '/farms',
                     resolve : load(['controller/farms.js']),  
-                    templateUrl: '/views/cattlefarm/farms.html'
+                    templateUrl: './view/cattlefarm/farms.html'
                 })
                 
-                .state('tags', {
+                .state('app.tags', {
                     url: '/tags',
                     resolve : load(['controller/tags.ja']),  
-                    templateUrl: '/views/cattlefarm/tags.html'
+                    templateUrl: './view/cattlefarm/tags.html'
                 })
                     
-                .state('expense', {
+                .state('app.expense', {
                     url: '/expense',
                     resolve : load(['controller/expense.js']),  
-                    templateUrl: '/views/cattlefarm/expense.html'
+                    templateUrl: './view/cattlefarm/expense.html'
                 })
                 
-                .state('expense-type', {
+                .state('app.expense-type', {
                     url: '/expenseType',
                     resolve : load(['controller/expensetype.js']),  
-                    templateUrl: '/views/cattlefarm/expensetype.html'
+                    templateUrl: './view/cattlefarm/expensetype.html'
                 })
                 
-                .state('products', {
+                .state('app.products', {
                     url: '/products',
                     resolve : load(['controller/products.js']),  
-                    templateUrl: '/views/cattlefarm/products.html'
+                    templateUrl: './view/cattlefarm/products.html'
                 })
                 
-                .state('animals', {
+                .state('app.animals', {
                     url: '/animals',
                     resolve : load(['controller/animals.js']),  
-                    templateUrl: '/views/cattlefarm/animals.html'
+                    templateUrl: './view/cattlefarm/animals.html'
                 })
                 
-                .state('bill-cycle', {
+                .state('app.bill-cycle', {
                     url: '/billCycle',
                     resolve : load(['controller/billcycle.js']),  
-                    templateUrl: '/views/cattlefarm/billcycle.html'
+                    templateUrl: './view/cattlefarm/billcycle.html'
                 })
 
-                .state('customers', {
+                .state('app.customers', {
                     url: '/customers',
                     resolve : load(['controller/customers.js']),  
-                    templateUrl: '/views/cattlefarm/customers.html'
+                    templateUrl: './view/cattlefarm/customers.html'
                 })
 
-                .state('milk-delivery', {
+                .state('app.milk-delivery', {
                     url: '/milkDelivery',
                     resolve : load(['controller/milkdelivery.js']),  
-                    templateUrl: '/views/cattlefarm/milkdelivery.html'
+                    templateUrl: './view/cattlefarm/milkdelivery.html'
                 })
 
-                .state('dairy-payment', {
+                .state('app.dairy-payment', {
                     url: '/dairyPayment',
                     resolve : load(['controller/dairypayment.js']),  
-                    templateUrl: '/views/cattlefarm/dairypayment.html'
+                    templateUrl: './view/cattlefarm/dairypayment.html'
                 })
 
-                .state('weight', {
+                .state('app.weight', {
                     url: '/weight',
                     resolve : load(['controller/weight.js']),  
-                    templateUrl: '/views/cattlefarm/weight.html'
+                    templateUrl: './view/cattlefarm/weight.html'
                 })
                 
-                .state('stock', {
+                .state('app.stock', {
                     url: '/stock',
                     resolve : load(['controller/stock.js']),  
-                    templateUrl: '/views/cattlefarm/stock.html'
+                    templateUrl: './view/cattlefarm/stock.html'
                 })
-                .state('users', {
+                .state('app.users', {
                     url: '/users',
                     resolve : load(['controller/users.js']),  
-                    templateUrl: '/views/cattlefarm/users.html'
+                    templateUrl: './view/cattlefarm/users.html'
                 })
                 
-                .state('feed-used', {
+                .state('app.feed-used', {
                     url: '/feedUsed',
                     resolve : load(['controller/feedused.js']),  
-                    templateUrl: '/views/cattlefarm/feedused.html'
+                    templateUrl: './view/cattlefarm/feedused.html'
                 })
                 
-                .state('prices', {
+                .state('app.prices', {
                     url: '/prices',
                     resolve : load(['controller/prices.js']),  
-                    templateUrl: '/views/cattlefarm/prices.html'
+                    templateUrl: './view/cattlefarm/prices.html'
                 })
                 
-                .state('dairy-record', {
+                .state('app.dairy-record', {
                     url: '/dairyRecord',
                     resolve : load(['controller/dairyrecord.js']),  
-                    templateUrl: '/views/cattlefarm/dairyrecord.html'
+                    templateUrl: './view/cattlefarm/dairyrecord.html'
                 })
               .state('access', {
                   url: '/access',
