@@ -5,7 +5,7 @@ var autoIncrement = require('mongoose-auto-increment');
 var ProductSchema = new mongoose.Schema({
     productId: Number,
 	productName: String,
-	productName: String,
+	productDescription: String,
 	productPer: String,
 	companyId: Number,
     active: { type: Boolean, default: true },

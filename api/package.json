@@ -21,5 +21,8 @@
     "jwt-simple": "^0.5.1",
     "mongoose": "^4.11.3",
     "mongoose-auto-increment": "^5.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
   }
 }

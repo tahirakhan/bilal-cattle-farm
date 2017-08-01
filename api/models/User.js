@@ -5,6 +5,7 @@ var autoIncrement = require('mongoose-auto-increment');
 var bcrypt = require('bcrypt-nodejs')
 var UserSchema = new mongoose.Schema({
     userId: Number,
+    name:String,
     email : String,
     password: String,
     companyId: Number,

@@ -29,11 +29,12 @@ var Customer = require('./models/Customer.js');
 var MilkDelivery = require('./models/MilkDelivery.js');
 var DairyPayment = require('./models/DairyPayment.js');
 var app = express();
+app.use(bodyParser.json()); // for parsing application/json
+
 var router = require('./controller/index');
 
 app.use('/api', router);
 
-app.use(bodyParser.json()); // for parsing application/json
 
 app.use(function(req,res,next){
     
