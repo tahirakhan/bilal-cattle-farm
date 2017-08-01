@@ -9,7 +9,7 @@
  */
 angular.module('app')
   .controller('RegisterCtrl', function ($scope,auth,alert) {
-    $scope.submit = function(){
+    $scope.signup = function(){
         
         auth.register($scope.email, $scope.password)
        .then(

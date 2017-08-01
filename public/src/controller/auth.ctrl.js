@@ -1,4 +1,4 @@
-app.controller('AuthController', ['$scope', '$rest', '$state', 'authKey', 'toaster', function($scope, $rest, $state, authKey, toaster) {
+app.controller('AuthController', ['$scope', '$rest', '$state', 'authKey', 'toaster','auth','alert', function($scope, $rest, $state, authKey, toaster,auth,alert) {
   
 	// I just prepopulate the user object.. 
 	// It will save the time to login again and again
@@ -16,16 +16,34 @@ app.controller('AuthController', ['$scope', '$rest', '$state', 'authKey', 'toast
 
 	// Login
     this.signin = function(){
-    	$rest.call("login", { data: this.user, method: 'POST' }).then(function(data){
-        	// In case of success logged keep the data into authKey and redirect to dashboard
-        	authKey.set({ user: data, loggedin: true });
-        	toaster.success('Success', 'User Successfully Loggedin');
-        	$state.go("app.dashboard");
-        }, function(err){
-        	// in case of failure clear the authKey Data
-        	authKey.set();
-        	toaster.error('Error', 'Error while loggedin user');
-        });
-    };
+    	 auth.login($scope.email, $scope.password)
+       .then(
+           function(res){
+             alert('success','Welcome','Thanks for coming back, '+res.data.user.email+ '!');
+             
+           }, 
+           function(err){
+             alert('warning','Something went wrong :(', err.message);
+           }
+        );
+        
+    
+	}
+	
+	$scope.signup = function(){
+        
+        auth.register($scope.email, $scope.password)
+       .then(
+           function(res){
+             alert('success','Account Created!','Welcome, '+res.data.user.email+ '!');
+           }, 
+           function(err){
+             alert('warning','Something went wrong :(', err.message);
+           }
+        );
+        
+    
+    }
+    
 
 }]);

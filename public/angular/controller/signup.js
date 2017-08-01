@@ -19,7 +19,7 @@ app.controller('SignupFormController', ['$scope','auth','alert', '$http', '$stat
       });
     }
 
-    $scope.submit = function(){
+    $scope.signup = function(){
         
         auth.register($scope.email, $scope.password)
        .then(

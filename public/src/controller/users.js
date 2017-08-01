@@ -41,7 +41,7 @@ app.controller('UsersCtrl', ['$scope', function($scope) {
                 aTargets: [5],
                 mRender: function (data, type, full) {
                     var tbAction = '';
-                    tbAction += '<a onClick="angular.element(document.getElementById(\'UsersCtrl\')).scope().edit(1)" ><i class="fa fa-pencil"></i></button>';
+                    tbAction += '<a onClick="angular.element(document.getElementById(\'UsersCtrl\')).scope().edit('+full._id+')" ><i class="fa fa-pencil"></i></button>';
                    return tbAction;
                 }  
             },
@@ -50,7 +50,7 @@ app.controller('UsersCtrl', ['$scope', function($scope) {
                 aTargets: [6],
                 mRender: function (data, type, full) {
                     var tbAction = '';
-                    tbAction += '<a onClick="angular.element(document.getElementById(\'UsersCtrl\')).scope().delete(1)" ><i class="fa fa-times"></i></button>';
+                    tbAction += '<a onClick="angular.element(document.getElementById(\'UsersCtrl\')).scope().delete('+full._id+')" ><i class="fa fa-times"></i></button>';
                    return tbAction;
                 }  
             }

@@ -216,20 +216,21 @@ angular.module('app')
               })
               .state('access.signin', {
                   url: '/signin',
-                  templateUrl: 'view/single-page/signin.html',
-                  resolve: load( ['controller/auth.ctrl.js'] )
+                  templateUrl: './view/single-page/signin.html',
+                  resolve: load( ['controller/login.js'] )
               })
               .state('access.signup', {
                   url: '/signup',
-                  templateUrl: 'view/single-page/signup.html',
+                  templateUrl: './view/single-page/signup.html',
+                  resolve: load( ['controller/register.js'] )
               })
               .state('access.forgotpwd', {
                   url: '/forgotpwd',
-                  templateUrl: 'view/single-page/forgotpwd.html'
+                  templateUrl: './view/single-page/forgotpwd.html'
               })
               .state('access.404', {
                   url: '/404',
-                  templateUrl: 'view/single-page/404.html'
+                  templateUrl: './view/single-page/404.html'
               });
               /*
               .state('app', {
@@ -681,5 +682,5 @@ angular.module('app')
       }
     ]
   )
-.constant('API_URL','http://localhost:3000/');;
+.constant('API_URL','http://localhost:9000/');;
 1

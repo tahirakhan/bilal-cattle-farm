@@ -1,21 +1,22 @@
-<div class="container w-xxl w-auto-xs" ng-controller="AuthController as authCtrl" ng-init="app.settings.container = false;">
+<div class="container w-xxl w-auto-xs" ng-controller="LoginCtrl" ng-init="app.settings.container = false;">
   <div class="m-b-lg">
     <div class="wrapper text-center">
       <strong>Sign in to get in touch</strong>
     </div>
-    <form name="form" class="form-validation">
+    <form name="form" ng-submit="submit()" class="form-validation" novalidate>
       <div class="text-danger wrapper text-center" ng-show="authError">
           {{authCtrl.authError}}
       </div>
       <div class="list-group list-group-sm">
         <div class="list-group-item">
-          <input type="email" placeholder="Email" class="form-control no-border" ng-model="authCtrl.user.email" required>
+          <input type="email" name="email" placeholder="Email" class="form-control no-border" ng-model="email" required>
+          <p class="help-block" ng-show="form.email.$dirty && form.email.$invalid">Please type in correct email</p> 
         </div>
         <div class="list-group-item">
-           <input type="password" placeholder="Password" class="form-control no-border" ng-model="authCtrl.user.password" required>
+           <input type="password" placeholder="Password" class="form-control no-border" ng-model="password" required>
         </div>
       </div>
-      <button type="submit" class="btn btn-lg btn-primary btn-block" ng-click="authCtrl.signin()" ng-disabled='form.$invalid'>Log in</button>
+      <button type="submit" class="btn btn-lg btn-primary btn-block"  ng-disabled='form.$invalid'>Log in</button>
       <div class="text-center m-t m-b"><a ui-sref="access.forgotpwd">Forgot password?</a></div>
       <div class="line line-dashed"></div>
       <p class="text-center"><small>Do not have an account?</small></p>
