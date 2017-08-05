@@ -4,24 +4,6 @@
  * Config for the router
  */
 
- angular.module('app')
-  .factory('authInterceptor', function (authToken) {
-    return {
-      request: function(config){
-          var token = authToken.getToken();
-          if(token){
-              config.headers.Authorization = 'Bearer ' + token;
-          }
-          return config;
-          
-          
-      },
-      response:function(response){
-          return response;
-            
-      }
-    };
-  });
 
 angular.module('app')
   .run(
@@ -107,7 +89,8 @@ angular.module('app')
 
                 .state('app.logout', {
                     url: '/logout',
-                    resolve : load(['controller/logout.js'])
+                    controller : 'LogoutCtrl',
+                    templateUrl: 'view/dashboard/index.html'
                 })
                 
                 .state('app.company', {
@@ -124,7 +107,7 @@ angular.module('app')
                 
                 .state('app.tags', {
                     url: '/tags',
-                    resolve : load(['controller/tags.ja']),  
+                    resolve : load(['controller/tags.js']),  
                     templateUrl: './view/cattlefarm/tags.html'
                 })
                     

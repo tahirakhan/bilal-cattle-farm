@@ -1,3 +1,4 @@
+<div ng-controller="NavCtrl">
 <ul class="nav">
   
   <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
@@ -10,7 +11,7 @@
     </a>
   </li>
 
-  <li>
+  <li ng-show="isAuthenticated()">
     <a href class="auto">
       <span class="pull-right text-muted">
         <i class="fa fa-fw fa-angle-right text"></i>
@@ -74,7 +75,7 @@
     </ul>
   </li>
 
-  <li>
+  <li ng-show="isAuthenticated()">
     <a href class="auto">
       <span class="pull-right text-muted">
         <i class="fa fa-fw fa-angle-right text"></i>
@@ -129,7 +130,7 @@
   </li>
 
 
-  <li>
+  <li ng-show="isAuthenticated()">
     <a href class="auto">
       <span class="pull-right text-muted">
         <i class="fa fa-fw fa-angle-right text"></i>
@@ -624,3 +625,4 @@
   </li>
 </ul>-->
 <!-- / list -->
+</div>

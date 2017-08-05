@@ -7,6 +7,7 @@ angular.module('app')
      
     function authSuccessful(res){
         authToken.setToken(res.data.token);
+        authToken.setUser(res.data.user);
         $state.go('app.dashboard');
         return res;
     }
@@ -19,9 +20,9 @@ angular.module('app')
         return $http.post(API_URL+ 'login',  {email : email,password: password}).then(authSuccessful,authFailure);
     }
     
-    this.register = function(email,password){
+    this.register = function(companyName,name,email,password){
         
-        return $http.post(API_URL+ 'register',  {email : email,password: password}).then(authSuccessful,authFailure);
+        return $http.post(API_URL+ 'register',  {companyName:companyName,name:name,email : email,password: password}).then(authSuccessful,authFailure);
     }
     
   });

@@ -11,7 +11,7 @@ angular.module('app')
   .controller('RegisterCtrl', function ($scope,auth,alert) {
     $scope.signup = function(){
         
-        auth.register($scope.email, $scope.password)
+        auth.register($scope.companyName,$scope.name,$scope.email, $scope.password)
        .then(
            function(res){
              alert('success','Account Created!','Welcome, '+res.data.user.email+ '!');

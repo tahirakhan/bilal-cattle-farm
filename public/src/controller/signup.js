@@ -21,7 +21,7 @@ app.controller('SignupFormController', ['$scope','auth','alert', '$http', '$stat
 
     $scope.submit = function(){
         
-        auth.register($scope.email, $scope.password)
+        auth.register($scope.companyName,$scope.name,$scope.email, $scope.password)
        .then(
            function(res){
              alert('success','Account Created!','Welcome, '+res.data.user.email+ '!');

@@ -15,8 +15,8 @@ router.route('/user')
         user.email = req.body.email; 
         user.password = req.body.password; 
         user.companyId = req.body.companyId; 
-    
-
+    	user.masterAdmin = req.body.masterAdmin;
+		
 		user.save(function(err) {
 			if (err)
 				res.send(err);
@@ -61,8 +61,8 @@ router.route('/user/:user_id')
             user.email = req.body.email; 
             user.password = req.body.password; 
             user.companyId = req.body.companyId; 
-            user.updatedOn = Date.now;
-            
+            user.masterAdmin = req.body.masterAdmin;
+			
             if (req.body.active !== null  && req.body.active !== undefined ) {
                 user.active = req.body.active;         
             }

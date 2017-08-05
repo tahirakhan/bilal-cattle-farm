@@ -33,7 +33,6 @@ app.use(bodyParser.json()); // for parsing application/json
 
 var router = require('./controller/index');
 
-app.use('/api', router);
 
 
 app.use(function(req,res,next){
@@ -44,17 +43,19 @@ app.use(function(req,res,next){
     
     next();
 });
+app.use('/api', router);
 
 
 
 app.post('/register',function(req,res){
-    var user = req.body;
-    var newUser = new User({email:user.email,password:user.password});
+    var object = req.body;
     
-    
-    
-    newUser.save(function(err){
-        createSendToken(newUser,res);
+    var newCompany = new Company({companyName:object.companyName});
+    newCompany.save(function(err){
+        var newUser = new User({name:object.name,email:object.email,password:object.password,companyId:newCompany.companyId,masterAdmin:true});
+        newUser.save(function(err){
+            createSendToken(newUser,res);
+        });
     });
 });
 

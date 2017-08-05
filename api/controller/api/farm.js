@@ -26,11 +26,11 @@ router.route('/farm')
 
 	// get all the farms (accessed at GET http://localhost:8080/api/farms)
 	.get(function(req, res) {
-		Farm.find(function(err, farms) {
+		Farm.find({deleted:false},function(err, farms) {
 			if (err)
 				res.send(err);
 
-			res.json(farms);
+			res.json({ "aaData":farms});
 		});
 	});
 

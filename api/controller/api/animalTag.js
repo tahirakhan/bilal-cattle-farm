@@ -26,11 +26,11 @@ router.route('/animal-tag')
 
 	// get all the animalTags (accessed at GET http://localhost:8080/api/animalTags)
 	.get(function(req, res) {
-		AnimalTag.find(function(err, animalTags) {
+		AnimalTag.find({deleted:false},function(err, animalTags) {
 			if (err)
 				res.send(err);
 
-			res.json(animalTags);
+			res.json({ "aaData":animalTags});
 		});
 	});
 

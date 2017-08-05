@@ -1,4 +1,5 @@
 var express = require('express');
+var jwt = require('jwt-simple');
 var router = express.Router();
 
 var Company = require('../../models/Company');
@@ -25,12 +26,21 @@ router.route('/company')
 
 	// get all the companys (accessed at GET http://localhost:8080/api/companys)
 	.get(function(req, res) {
-		Company.find(function(err, companys) {
-			if (err)
-				res.send(err);
 
-			res.json(companys);
-		});
+		if(!req.headers.authorization){
+        return res.status(401).send({
+            message: 'You are not authorized'
+        })
+    }
+    var token = req.headers.authorization.split(' ')[1];
+    var payload = jwt.decode(token,"shhh...");
+    
+    if(!payload.sub){
+        res.status(401).send({
+            message: 'Authentication failed'
+        });
+    }
+		res.json(payload);
 	});
 
 // on routes that end in /companys/:company_id
@@ -39,7 +49,7 @@ router.route('/company/:company_id')
 
 	// get the company with that id
 	.get(function(req, res) {
-		Company.findById(req.params.company_id, function(err, company) {
+		Company.findOne({companyId:req.params.company_id}, function(err, company) {
 			if (err)
 				res.send(err);
 			res.json(company);
@@ -48,7 +58,7 @@ router.route('/company/:company_id')
 
 	// update the company with this id
 	.put(function(req, res) {
-		Company.findById(req.params.company_id, function(err, company) {
+		Company.findOne({companyId:req.params.company_id}, function(err, company) {
 
 			if (err)
 				res.send(err);
