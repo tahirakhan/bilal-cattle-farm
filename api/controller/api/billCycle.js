@@ -5,7 +5,7 @@ var BillCycle = require('../../models/BillCycle');
 
 // on routes that end in /billCycles
 // ----------------------------------------------------
-router.route('/bill-cycle')
+router.route('/company/:id/bill-cycle')
 
 	// create a billCycle (accessed at POST http://localhost:8080/billCycles)
 	.post(function(req, res) {
@@ -28,17 +28,17 @@ router.route('/bill-cycle')
 
 	// get all the billCycles (accessed at GET http://localhost:8080/api/billCycles)
 	.get(function(req, res) {
-		BillCycle.find(function(err, billCycles) {
+		BillCycle.find({deleted:false,companyId:req.params.id},function(err, billCycles) {
 			if (err)
 				res.send(err);
 
-			res.json(billCycles);
+			res.json({ "aaData":billCycles});
 		});
 	});
 
 // on routes that end in /billCycles/:billCycle_id
 // ----------------------------------------------------
-router.route('/bill-cycle/:billCycle_id')
+router.route('/company/:id/bill-cycle/:billCycle_id')
 
 	// get the billCycle with that id
 	.get(function(req, res) {

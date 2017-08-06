@@ -14,7 +14,7 @@ angular.module('app')
     $scope.addNewTag = function(){
       var data = {companyId:authToken.getUser().companyId,animalTagName:$scope.animalTagName};
       if($scope._id == null){ 
-        $http.post(API_URL+ 'api/animal-tag',data).then(function(res){
+        $http.post(API_URL+ 'api/company/'+authToken.getUser().companyId+'/animal-tag',data).then(function(res){
             alert('success','Added','New Farm Added');
             $scope._id = null;
             $state.go($state.current, {}, {reload: true});
@@ -22,9 +22,9 @@ angular.module('app')
           });
       }
       else{
-        $http.get(API_URL+ 'api/animal-tag/'+$scope._id).then(function(res){
+        $http.get(API_URL+ 'api/company/'+authToken.getUser().companyId+'/animal-tag/'+$scope._id).then(function(res){
           res.data.animalTagName = $scope.animalTagName;
-            $http.put(API_URL+ 'api/animal-tag/'+res.data._id,res.data).then(function(e){
+            $http.put(API_URL+ 'api/company/'+authToken.getUser().companyId+'/animal-tag/'+res.data._id,res.data).then(function(e){
                 alert('success','Updated','New Farm Added');
                 $scope._id = null;
                 $state.go($state.current, {}, {reload: true});
@@ -33,9 +33,9 @@ angular.module('app')
       }
     },
     $scope.toggleActive = function(id,active){
-      $http.get(API_URL+ 'api/animal-tag/'+id).then(function(res){
+      $http.get(API_URL+ 'api/company/'+authToken.getUser().companyId+'/animal-tag/'+id).then(function(res){
           res.data.active = !active;
-            $http.put(API_URL+ 'api/animal-tag/'+res.data._id,res.data).then(function(e){
+            $http.put(API_URL+ 'api/company/'+authToken.getUser().companyId+'/animal-tag/'+res.data._id,res.data).then(function(e){
                 alert('success','State Changed','Active/InActive');
                 $scope._id = null;
                 $state.go($state.current, {}, {reload: true});
@@ -43,13 +43,13 @@ angular.module('app')
         });
     },
     $scope.edit = function(val){
-      $http.get(API_URL+ 'api/animal-tag/'+val).then(function(res){
+      $http.get(API_URL+ 'api/company/'+authToken.getUser().companyId+'/animal-tag/'+val).then(function(res){
           $scope.animalTagName = res.data.animalTagName;
           $scope._id = res.data._id;
       });
     },
     $scope.delete = function(val){
-      $http.delete(API_URL+ 'api/animal-tag/'+val).then(function(res){
+      $http.delete(API_URL+ 'api/company/'+authToken.getUser().companyId+'/animal-tag/'+val).then(function(res){
           alert('success','Deleted','Farm Deleted');
           $state.go($state.current, {}, {reload: true});
       });
@@ -57,7 +57,7 @@ angular.module('app')
     },
     $scope.tbOptions = {
           data : [],
-          sAjaxSource: API_URL+'api/animal-tag',
+          sAjaxSource: API_URL+'api/company/'+authToken.getUser().companyId+'/animal-tag',
 
           aoColumns: [
             { mData: 'selected' },

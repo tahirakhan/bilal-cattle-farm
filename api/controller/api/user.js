@@ -5,7 +5,7 @@ var User = require('../../models/User');
 
 // on routes that end in /users
 // ----------------------------------------------------
-router.route('/user')
+router.route('/company/:id/user')
 
 	// create a user (accessed at POST http://localhost:8080/users)
 	.post(function(req, res) {
@@ -39,7 +39,7 @@ router.route('/user')
 
 // on routes that end in /users/:user_id
 // ----------------------------------------------------
-router.route('/user/:user_id')
+router.route('/company/:id/user/:user_id')
 
 	// get the user with that id
 	.get(function(req, res) {

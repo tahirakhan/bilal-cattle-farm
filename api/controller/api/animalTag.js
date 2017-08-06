@@ -5,7 +5,7 @@ var AnimalTag = require('../../models/AnimalTag');
 
 // on routes that end in /animalTags
 // ----------------------------------------------------
-router.route('/animal-tag')
+router.route('/company/:id/animal-tag')
 
 	// create a animalTag (accessed at POST http://localhost:8080/animalTags)
 	.post(function(req, res) {
@@ -26,7 +26,7 @@ router.route('/animal-tag')
 
 	// get all the animalTags (accessed at GET http://localhost:8080/api/animalTags)
 	.get(function(req, res) {
-		AnimalTag.find({deleted:false},function(err, animalTags) {
+		AnimalTag.find({deleted:false,companyId:req.params.id},function(err, animalTags) {
 			if (err)
 				res.send(err);
 
@@ -36,7 +36,7 @@ router.route('/animal-tag')
 
 // on routes that end in /animalTags/:animalTag_id
 // ----------------------------------------------------
-router.route('/animal-tag/:animalTag_id')
+router.route('/company/:id/animal-tag/:animalTag_id')
 
 	// get the animalTag with that id
 	.get(function(req, res) {

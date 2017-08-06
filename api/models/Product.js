@@ -6,6 +6,7 @@ var ProductSchema = new mongoose.Schema({
     productId: Number,
 	productName: String,
 	productDescription: String,
+	productPrice: String,
 	productPer: String,
 	companyId: Number,
     active: { type: Boolean, default: true },

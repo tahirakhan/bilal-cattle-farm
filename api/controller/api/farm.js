@@ -5,7 +5,7 @@ var Farm = require('../../models/Farm');
 
 // on routes that end in /farms
 // ----------------------------------------------------
-router.route('/farm')
+router.route('/company/:id/farm')
 
 	// create a farm (accessed at POST http://localhost:8080/farms)
 	.post(function(req, res) {
@@ -26,7 +26,7 @@ router.route('/farm')
 
 	// get all the farms (accessed at GET http://localhost:8080/api/farms)
 	.get(function(req, res) {
-		Farm.find({deleted:false},function(err, farms) {
+		Farm.find({deleted:false,companyId:req.params.id},function(err, farms) {
 			if (err)
 				res.send(err);
 
@@ -36,7 +36,7 @@ router.route('/farm')
 
 // on routes that end in /farms/:farm_id
 // ----------------------------------------------------
-router.route('/farm/:farm_id')
+router.route('/company/:id/farm/:farm_id')
 
 	// get the farm with that id
 	.get(function(req, res) {

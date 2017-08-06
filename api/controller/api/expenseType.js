@@ -5,7 +5,7 @@ var ExpenseType = require('../../models/ExpenseType');
 
 // on routes that end in /expenseTypes
 // ----------------------------------------------------
-router.route('/expense-type')
+router.route('/company/:id/expense-type')
 
 	// create a expenseType (accessed at POST http://localhost:8080/expenseTypes)
 	.post(function(req, res) {
@@ -26,17 +26,17 @@ router.route('/expense-type')
 
 	// get all the expenseTypes (accessed at GET http://localhost:8080/api/expenseTypes)
 	.get(function(req, res) {
-		ExpenseType.find(function(err, expenseTypes) {
+		ExpenseType.find({deleted:false,companyId:req.params.id},function(err, expenseTypes) {
 			if (err)
 				res.send(err);
 
-			res.json(expenseTypes);
+			res.json({ "aaData":expenseTypes});
 		});
 	});
 
 // on routes that end in /expenseTypes/:expenseType_id
 // ----------------------------------------------------
-router.route('/expense-type/:expenseType_id')
+router.route('/company/:id/expense-type/:expenseType_id')
 
 	// get the expenseType with that id
 	.get(function(req, res) {

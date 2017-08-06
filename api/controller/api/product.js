@@ -5,7 +5,7 @@ var Product = require('../../models/Product');
 
 // on routes that end in /products
 // ----------------------------------------------------
-router.route('/product')
+router.route('/company/:id/product')
 
 	// create a product (accessed at POST http://localhost:8080/products)
 	.post(function(req, res) {
@@ -13,6 +13,7 @@ router.route('/product')
 		var product = new Product();		// create a new instance of the Product model
 		product.productName = req.body.productName;  // set the products name (comes from the request)
 		product.productDescription = req.body.productDescription;
+		product.productPrice = req.body.productPrice;
 		product.productPer = req.body.productPer;
 		product.companyId = req.body.companyId;  // set the products name (comes from the request)
 
@@ -28,17 +29,17 @@ router.route('/product')
 
 	// get all the products (accessed at GET http://localhost:8080/api/products)
 	.get(function(req, res) {
-		Product.find(function(err, products) {
+		Product.find({deleted:false,companyId:req.params.id},function(err, products) {
 			if (err)
 				res.send(err);
 
-			res.json(products);
+			res.json({ "aaData":products});
 		});
 	});
 
 // on routes that end in /products/:product_id
 // ----------------------------------------------------
-router.route('/product/:product_id')
+router.route('/company/:id/product/:product_id')
 
 	// get the product with that id
 	.get(function(req, res) {
@@ -58,6 +59,7 @@ router.route('/product/:product_id')
 
 		product.productName = req.body.productName;  // set the products name (comes from the request)
 		product.productDescription = req.body.productDescription;
+		product.productPrice = req.body.productPrice;
 		product.productPer = req.body.productPer;
 		product.companyId = req.body.companyId;  // set the products name (comes from the request)
             //product.updatedOn = Date.now;
