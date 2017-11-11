@@ -1,0 +1,12 @@
+<div class="form-group">
+  <label class="col-lg-2 control-label">Product</label>
+  <div class="col-lg-10">
+    <select class="form-control"
+            ng-model="productId"
+            placeholder="productId">
+      <option ng-repeat="x in products"
+              value="{{x.productId}}">{{x.productName}}</option>
+    </select>
+    <span class="help-block m-b-none">Please Type In Product Name Here.</span>
+  </div>
+</div>

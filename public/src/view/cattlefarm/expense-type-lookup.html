@@ -1,0 +1,12 @@
+<div class="form-group">
+  <label class="col-lg-2 control-label">Expense Type</label>
+  <div class="col-lg-10">
+    <select class="form-control"
+            ng-model="expenseTypeId"
+            placeholder="expenseTypeId">
+      <option ng-repeat="x in expenseTypes"
+              value="{{x.expenseTypeId}}">{{x.expenseTypeName}}</option>
+    </select>
+    <span class="help-block m-b-none">Please select Expense Type Here.</span>
+  </div>
+</div>

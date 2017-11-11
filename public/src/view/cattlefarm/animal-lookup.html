@@ -1,0 +1,12 @@
+<div class="form-group">
+  <label class="col-lg-2 control-label">Animal</label>
+  <div class="col-lg-10">
+    <select class="form-control"
+            ng-model="animalId"
+            placeholder="animalId">
+      <option ng-repeat="x in animals"
+              value="{{x.animalId}}">{{x.tagId}}</option>
+    </select>
+    <span class="help-block m-b-none">Please select animal Here.</span>
+  </div>
+</div>
