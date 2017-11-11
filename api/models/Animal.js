@@ -4,7 +4,6 @@ var autoIncrement = require('mongoose-auto-increment');
 
 var AnimalSchema = new mongoose.Schema({
     animalId: Number,
-	animalName: String,
 	tagId: Number,
 	farmId: Number,
 	birthDate :{type : Date, default: Date.now},

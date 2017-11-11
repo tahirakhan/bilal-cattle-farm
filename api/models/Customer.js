@@ -10,6 +10,8 @@ var CustomerSchema = new mongoose.Schema({
     cnic: String,
     lastRate: Number,
     totalPaymentDue: Number,
+
+    companyId: Number,
     active: { type: Boolean, default: true },
 	createdBy: Number,
 	updatedBy: Number,

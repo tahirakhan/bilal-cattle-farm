@@ -116,6 +116,12 @@ angular.module('app')
                     resolve : load(['controller/expense.js']),  
                     templateUrl: './view/cattlefarm/expense.html'
                 })
+
+                .state('app.expense-detail', {
+                    url: '/expense-detail/:ID',
+                    resolve : load(['controller/expense-detail.js']),  
+                    templateUrl: './view/cattlefarm/expense-detail.html'
+                })
                 
                 .state('app.expense-type', {
                     url: '/expenseType',
@@ -665,5 +671,7 @@ angular.module('app')
       }
     ]
   )
-.constant('API_URL','http://localhost:9000/');;
+.constant('API_URL','http://localhost:9000/')
+.constant('FEED_PURCHASE','120')
+.constant('ANIMAL_PURCHASE','100');
 1

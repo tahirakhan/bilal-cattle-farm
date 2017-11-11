@@ -5,10 +5,10 @@ var autoIncrement = require('mongoose-auto-increment');
 var ExpenseSchema = new mongoose.Schema({
     expenseId: Number,
 	expenseDescription: String,
-	companyId: Number,
 	expenseDate: {type: Date,default: Date.now},
 	expenseTotal: Number,
-    active: { type: Boolean, default: true },
+	companyId: Number,
+	active: { type: Boolean, default: true },
 	createdBy: Number,
 	updatedBy: Number,
 	createdOn: {type: Date, default: Date.now},

@@ -21,6 +21,6 @@ angular.module('app')
         $timeout.cancel(alertTimeout);
         alertTimeout = $timeout(function(){
             $rootScope.show = false;
-        },timeout || 2000);
+        },timeout || 500);
     }
   });

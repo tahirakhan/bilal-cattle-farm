@@ -8,29 +8,29 @@ var Farm = require('../../models/Farm');
 router.route('/company/:id/farm')
 
 	// create a farm (accessed at POST http://localhost:8080/farms)
-	.post(function(req, res) {
-		
+	.post(function (req, res) {
+
 		var farm = new Farm();		// create a new instance of the Farm model
 		farm.farmName = req.body.farmName;  // set the farms name (comes from the request)
 		farm.companyId = req.body.companyId;  // set the farms name (comes from the request)
 
-		farm.save(function(err) {
+		farm.save(function (err) {
 			if (err)
 				res.send(err);
 
 			res.json({ message: 'Farm created!' });
 		});
 
-		
+
 	})
 
 	// get all the farms (accessed at GET http://localhost:8080/api/farms)
-	.get(function(req, res) {
-		Farm.find({deleted:false,companyId:req.params.id},function(err, farms) {
+	.get(function (req, res) {
+		Farm.find({ deleted: false, companyId: req.params.id }, function (err, farms) {
 			if (err)
 				res.send(err);
 
-			res.json({ "aaData":farms});
+			res.json({ "aaData": farms });
 		});
 	});
 
@@ -39,8 +39,8 @@ router.route('/company/:id/farm')
 router.route('/company/:id/farm/:farm_id')
 
 	// get the farm with that id
-	.get(function(req, res) {
-		Farm.findById(req.params.farm_id, function(err, farm) {
+	.get(function (req, res) {
+		Farm.findById(req.params.farm_id, function (err, farm) {
 			if (err)
 				res.send(err);
 			res.json(farm);
@@ -48,24 +48,24 @@ router.route('/company/:id/farm/:farm_id')
 	})
 
 	// update the farm with this id
-	.put(function(req, res) {
-		Farm.findById(req.params.farm_id, function(err, farm) {
+	.put(function (req, res) {
+		Farm.findById(req.params.farm_id, function (err, farm) {
 
 			if (err)
 				res.send(err);
 
-		farm.farmName = req.body.farmName;  // set the farms name (comes from the request)
-		farm.companyId = req.body.companyId;  // set the farms name (comes from the request)
-            //farm.updatedOn = Date.now;
+			farm.farmName = req.body.farmName;  // set the farms name (comes from the request)
+			farm.companyId = req.body.companyId;  // set the farms name (comes from the request)
+			//farm.updatedOn = Date.now;
 
-            if (req.body.active !== null  && req.body.active !== undefined ) {
-                farm.active = req.body.active;         
-            }
-            if (req.body.deleted !== null && req.body.deleted !== undefined) {
-                farm.deleted = req.body.deleted;         
-            } 
+			if (req.body.active !== null && req.body.active !== undefined) {
+				farm.active = req.body.active;
+			}
+			if (req.body.deleted !== null && req.body.deleted !== undefined) {
+				farm.deleted = req.body.deleted;
+			}
 
-			farm.save(function(err) {
+			farm.save(function (err) {
 				if (err)
 					res.send(err);
 
@@ -76,16 +76,16 @@ router.route('/company/:id/farm/:farm_id')
 	})
 
 	// delete the farm with this id
-	.delete(function(req, res) {
-		Farm.findById(req.params.farm_id, function(err, farm) {
+	.delete(function (req, res) {
+		Farm.findById(req.params.farm_id, function (err, farm) {
 
 			if (err)
 				res.send(err);
 
-            //farm.updatedOn = Date.now;
-            farm.deleted = true;         
-             
-			farm.save(function(err) {
+			//farm.updatedOn = Date.now;
+			farm.deleted = true;
+
+			farm.save(function (err) {
 				if (err)
 					res.send(err);
 
@@ -93,6 +93,6 @@ router.route('/company/:id/farm/:farm_id')
 			});
 
 		});
-    });
-    
-    module.exports  = router;
+	});
+
+module.exports = router;

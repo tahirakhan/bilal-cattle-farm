@@ -61,6 +61,7 @@ angular.module('app')
 
           aoColumns: [
             { mData: 'selected' },
+            { mData: 'farmId' },
             { mData: 'farmName' },
             { mData: 'active' },
             { mData: '_id' },
@@ -77,7 +78,7 @@ angular.module('app')
             },
 
             {
-                aTargets: [2],
+                aTargets: [3],
                 mRender: function (data, type, full) {
                     var tbAction = '';
                     if(!full.active)
@@ -88,7 +89,7 @@ angular.module('app')
                 }  
             },
             {
-                aTargets: [3],
+                aTargets: [4],
                 mRender: function (data, type, full) {
                     var tbAction = '';
                     tbAction += '<a onClick="angular.element(document.getElementById(\'FarmsCtrl\')).scope().edit(\''+full._id+'\')" ><i class="fa fa-pencil"></i></button>';
@@ -97,7 +98,7 @@ angular.module('app')
             },
 
             {
-                aTargets: [4],
+                aTargets: [5],
                 mRender: function (data, type, full) {
                     var tbAction = '';
                     tbAction += '<a onClick="angular.element(document.getElementById(\'FarmsCtrl\')).scope().delete(\''+full._id+'\')" ><i class="fa fa-times"></i></button>';

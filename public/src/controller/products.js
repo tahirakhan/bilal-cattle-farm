@@ -74,6 +74,7 @@ angular.module('app')
 
           aoColumns: [
             { mData: 'selected' },
+            { mData: 'productId' },
             { mData: 'productName' },
             { mData: 'productDescription' },
             { mData: 'productPrice' },
@@ -93,7 +94,7 @@ angular.module('app')
             },
 
             {
-                aTargets: [5],
+                aTargets: [6],
                 mRender: function (data, type, full) {
                     var tbAction = '';
                     if(!full.active)
@@ -104,7 +105,7 @@ angular.module('app')
                 }  
             },
             {
-                aTargets: [6],
+                aTargets: [7],
                 mRender: function (data, type, full) {
                     var tbAction = '';
                     tbAction += '<a onClick="angular.element(document.getElementById(\'ProductsCtrl\')).scope().edit(\''+full._id+'\')" ><i class="fa fa-pencil"></i></button>';
@@ -113,7 +114,7 @@ angular.module('app')
             },
 
             {
-                aTargets: [7],
+                aTargets: [8],
                 mRender: function (data, type, full) {
                     var tbAction = '';
                     tbAction += '<a onClick="angular.element(document.getElementById(\'ProductsCtrl\')).scope().delete(\''+full._id+'\')" ><i class="fa fa-times"></i></button>';

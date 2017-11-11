@@ -11,7 +11,7 @@ var MilkDeliverySchema = new mongoose.Schema({
     rate:Number,
     
     amount:Number,
-    
+    companyId: Number,
     active: { type: Boolean, default: true },
 	createdBy: Number,
 	updatedBy: Number,

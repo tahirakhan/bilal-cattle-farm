@@ -13,11 +13,11 @@ var Product = require('./models/Product.js')
 var BillCycle = require('./models/BillCycle.js');
 
 var Expense = require('./models/Expense.js');
-var ExpenseDetails = require('./models/ExpenseDetails.js');
+var ExpenseDetails = require('./models/ExpenseDetail.js');
 var Animal = require('./models/Animal.js');
 
 var Stock = require('./models/Stock.js');
-var Weights = require('./models/Weights.js');
+var Weights = require('./models/Weight.js');
 var FeedUsed = require('./models/FeedUsed.js');
 var Prices = require('./models/Prices.js');
 

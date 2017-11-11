@@ -1,74 +1,74 @@
 <div ng-controller="BillCycleCtrl">
-<div class="bg-light lter b-b wrapper-md">
-  <h1 class="m-n font-thin h3">BillCycles</h1>
-</div>
-
-   
-
-        <div class="col-sm-">
-            <div class="panel panel-default">
-                <div class="panel-heading font-bold">Add New BillCycle</div>
-                <div class="panel-body">
-                <form class="bs-example form-horizontal" ng-submit="addNewBillCycle()">
-                    <div class="form-group">
-                    <label class="col-lg-2 control-label">BillCycle Name</label>
-                    <div class="col-lg-10">
-                        <input type="text" class="form-control" placeholder="billCycleName" ng-model="billCycleName">
-                        <span class="help-block m-b-none">Please enter the BillCycle name here.</span>
-                    </div>
-                    </div>
-
-                    <div class="form-group">
-                    <label class="col-lg-2 control-label">BillCycle Description</label>
-                    <div class="col-lg-10">
-                        <input type="text" class="form-control" placeholder="billCycleDescription" ng-model="billCycleDescription">
-                        <span class="help-block m-b-none">Please enter the BillCycle description here.</span>
-                    </div>
-                    </div>
-
-                    <div class="form-group">
-                    <label class="col-lg-2 control-label">BillCycle Days</label>
-                    <div class="col-lg-10">
-                        <input type="text" class="form-control" placeholder="billCycleDays" ng-model="billCycleDays">
-                        <span class="help-block m-b-none">Please enter the BillCycle days here.</span>
-                    </div>
-                    </div>
+  <div class="bg-light lter b-b wrapper-md">
+    <h1 class="m-n font-thin h3">BillCycles</h1>
+  </div>
 
 
-                    <div class="form-group">
-                    <div class="col-lg-offset-2 col-lg-10">
-                        <button type="submit" class="btn btn-sm btn-info">Save</button>
-                    </div>
-                    </div>
-                </form>
-                </div>
+
+  <div class="col-sm-">
+    <div class="panel panel-default">
+      <div class="panel-heading font-bold">Add New BillCycle</div>
+      <div class="panel-body">
+        <form class="bs-example form-horizontal" ng-submit="addNewBillCycle()">
+          <div class="form-group">
+            <label class="col-lg-2 control-label">BillCycle Name</label>
+            <div class="col-lg-10">
+              <input type="text" class="form-control" placeholder="billCycleName" ng-model="billCycleName">
+              <span class="help-block m-b-none">Please enter the BillCycle name here.</span>
             </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-lg-2 control-label">BillCycle Description</label>
+            <div class="col-lg-10">
+              <input type="text" class="form-control" placeholder="billCycleDescription" ng-model="billCycleDescription">
+              <span class="help-block m-b-none">Please enter the BillCycle description here.</span>
             </div>
+          </div>
 
-        
+          <div class="form-group">
+            <label class="col-lg-2 control-label">BillCycle Days</label>
+            <div class="col-lg-10">
+              <input type="text" class="form-control" placeholder="billCycleDays" ng-model="billCycleDays">
+              <span class="help-block m-b-none">Please enter the BillCycle days here.</span>
+            </div>
+          </div>
 
-<div class="wrapper-md"  id="BillCycleCtrl"> 
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      BillCycles List
-    </div>
-    <div class="table-responsive">
-      <table ui-jq="dataTable" ui-options="tbOptions" class="table table-striped b-t b-b" ui-refresh="dataTable">
-        <thead>
-          <tr>
-            <th  style="width:15%">Select All</th>
-            <th  style="width:25%">BillCycle Name</th>
-            <th  style="width:30%">BillCycle Description</th>
-            <th  style="width:10%">BillCycle Days</th>
-            <th  style="width:15%">Active</th>          
-            <th  style="width:5%">Edit</th>
-            <th  style="width:5%">Delete</th>
-          </tr>
-        </thead>
-        <tbody>
-        </tbody>
-      </table>
+
+          <div class="form-group">
+            <div class="col-lg-offset-2 col-lg-10">
+              <button type="submit" class="btn btn-sm btn-info">Save</button>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
-</div>
+
+
+
+  <div class="wrapper-md" id="BillCycleCtrl">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        BillCycles List
+      </div>
+      <div class="table-responsive">
+        <table ui-jq="dataTable" ui-options="tbOptions" class="table table-striped b-t b-b" ui-refresh="dataTable">
+          <thead>
+            <tr>
+              <th style="width:15%">Select All</th>
+              <th style="width:25%">BillCycle Name</th>
+              <th style="width:30%">BillCycle Description</th>
+              <th style="width:10%">BillCycle Days</th>
+              <th style="width:15%">Active</th>
+              <th style="width:5%">Edit</th>
+              <th style="width:5%">Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 </div>
